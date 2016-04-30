@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <title>Syntax</title>
+        
+        <meta charset="utf-8"/>
+        
+	<!-- CodeMirror Lib -->
+        <link rel="stylesheet" type="text/css" href="codemirror/lib/codemirror.css">    
+        <link rel="stylesheet" type="text/css" href="codemirror/addon/display/fullscreen.css">        
+        <link rel="stylesheet" type="text/css" href="style/min-themes.css">
+    <!-- Fin CodeMirror Lib -->        
+        
+    <!-- BuildingBlocks -->
+        <link rel="stylesheet" type="text/css" href="icons/action_icons.css"> 
+        <link rel="stylesheet" type="text/css" href="icons/settings_icons.css">              
+        <link rel="stylesheet" type="text/css" href="style/toolbars.css"> 
+        <link rel="stylesheet" type="text/css" href="style/switches.css">                		
+    <!-- Fin BuildingBlocks -->
+    
+    <!-- Slide Menu -->
+		<link rel="stylesheet" type="text/css" href="slide/menu_sideslide.css">  
+		<link rel="stylesheet" type="text/css" href="slide/normalize.css">
+    <!-- Fin Slide Menu -->    
+        
+    <!-- Theme Modificado -->
+        <link rel="stylesheet" type="text/css" href="codemirror/theme/monokai.css">
+    <!-- Fin Theme --> 
+    
+    <!-- Base - Style -->      
+        <link rel="stylesheet" type="text/css" href="style/base.css">               
+    <!-- Fin Base - Style -->    
+    
+                     
+    <!-- Tooltip -->
+	   <!-- <link rel="stylesheet" type="text/css" href="tooltip/menu_cornerbox.css">  -->
+    <!-- Fin Tooltip -->   
+   
+         
+    </head>
+<!-- Body App --> 
+    <body role="application">
+<!-- Slide Menu -->
+		<div class="container">
+			<div class="menu-wrap">
+				<nav class="menu">
+					<div class="icon-list">
+						<a href="#"><i class="fa fa-fw fa-star-o"></i><span>Nuevo Syntax</span></a>
+						<a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Cargar Syntax</span></a>
+						<a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Ayuda</span></a>
+						<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>About Syntax</span></a>
+						
+						<br><span id="config-syntax">--- Configuración Syntax ---</span>						
+						<div class="configuraciones">
+							
+							<p class="label-config-c">Modo</p>
+							<select id="select">								
+								<option value="1" tx="htmlmixed">HMTL</option>
+								<option value="3" tx="css">CSS</option>
+								<option value="2" tx="javascript">JAVASCRIPT</option>
+							</select>
+
+							<p class="label-config-c">Tema</p>
+							<select id="tema">								
+								<option selected>default</option>
+							    <option>3024-day</option>
+							    <option>3024-night</option>
+							    <option>ambiance</option>
+							    <option>base16-dark</option>
+							    <option>base16-light</option>
+							    <option>blackboard</option>
+							    <option>cobalt</option>
+							    <option>eclipse</option>
+							    <option>elegant</option>
+							    <option>erlang-dark</option>
+							    <option>lesser-dark</option>
+							    <option>mbo</option>
+							    <option>mdn-like</option>
+							    <option>midnight</option>
+							    <option>monokai</option>
+							    <option>neat</option>
+							    <option>neo</option>
+							    <option>night</option>
+							    <option>paraiso-dark</option>
+							    <option>paraiso-light</option>
+							    <option>pastel-on-dark</option>
+							    <option>rubyblue</option>
+							    <option>solarized dark</option>
+							    <option>solarized light</option>
+							    <option>the-matrix</option>
+							    <option>tomorrow-night-eighties</option>
+							    <option>twilight</option>
+							    <option>vibrant-ink</option>
+							    <option>xq-dark</option>
+							    <option>xq-light</option>
+							</select>
+
+							<!--line numbers-->
+							<label class="pack-switch">	
+							<p class="label-config">Line numbers</p>						
+								<input value="1" type="checkbox" checked>
+								<span></span>							
+							</label>
+
+							<!--line wrapping-->
+							<label class="pack-switch">
+							<p class="label-config">Line wrapping</p>
+								<input value="2" type="checkbox" checked>
+								<span></span>
+							</label>
+							
+							<!--match brackets-->
+							<label class="pack-switch">
+							<p class="label-config">Match brackets</p>
+								<input value="3" type="checkbox" checked>
+								<span></span>
+							</label>
+							
+							<!--auto close tags-->
+							<label class="pack-switch">
+							<p class="label-config">Auto close tags</p>
+								<input value="4" type="checkbox" checked>
+								<span></span>
+							</label>
+							
+							<!--auto close brackets-->
+							<label class="pack-switch">
+							<p class="label-config">Auto close brackets</p>
+								<input value="5" type="checkbox" checked>
+								<span></span>
+							</label>
+						</div>							  
+						</div>
+					</nav>
+				</div>			
+			<button class="close-button" id="close-button">Close Menu</button>
+		</div>
+			<div class="content-wrap">
+				<div class="content">		
+<!-- Fin Slide Menu -->
+  		
+<!-- Area Code Usuario -->		
+					<form><textarea id="code" name="code"></textarea></form>		
+<!-- Fin Area Code Usuario -->
+				
+<!-- Barra Menu-->
+					<div role="toolbar" id="foot_bar">
+						<ul>
+							<li><button class="action-icon menu" id="open-button">Menu</button></li>		  		  	
+						</ul>			
+						<ul>	  								
+							<li><button id="btn_copy" class="action-icon copy">Copy</button></li>		    
+							<li><button id="btn_cut" class="action-icon cut">Cut</button></li>
+							<li><button id="btn_paste" class="action-icon paste">Paste</button></li>
+							<li><button id="btn_delete" class="action-icon delete">Delete</button></li>
+						</ul>
+					</div>			
+<!-- Fin Barra de Menu --> 
+				</div>__
+			</div>
+		</div>
+		
+	 <!-- Mode -->
+	     <script src="codemirror/lib/codemirror.js"></script>     
+        <script src="codemirror/mode/xml/xml.js"></script>
+        <script src="codemirror/mode/javascript/javascript.js"></script>
+        <script src="codemirror/mode/css/css.js"></script>        
+        <script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <!-- Fin Mode -->
+ 
+    <!--Addons -->       
+        <script src="codemirror/addon/edit/matchbrackets.js"></script>
+        <script src="codemirror/addon/edit/matchtags.js"></script>
+        <script src="codemirror/addon/edit/closetag.js"></script>
+        <script src="codemirror/addon/edit/closebrackets.js"></script>       
+    
+        <script src="codemirror/addon/display/fullscreen.js"></script>
+        <script src="codemirror/addon/display/placeholder.js"></script>        
+    <!-- Fin Addons -->     
+    
+    <!-- Slide JS -->
+		<script src="slide/classie.js"></script>	
+		<script src="slide/main.js"></script>   
+		<script type="text/javascript" src="js/jquery.min.js"></script> 
+		<script type="text/javascript" src="js/config.js"></script> 	
+	<!-- Fin Slide JS -->
+    </body>   
+<!--Fin Body App -->    
+    
+<!-- Script Area 
+    <script type="text/javascript">    	    
+	    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+	    mode: "htmlmixed",
+   	    theme: "monokai",   	   
+  	    fullScreen: true,  
+   	    autofocus: true,
+   	    lineNumbers : true,
+   	    lineWrapping: true,
+   	    matchBrackets: true,   	    		
+   	    autoCloseTags: true,   	  
+	    autoCloseBrackets: true,	    
+	    tabSize: 4,
+	    indentUnit: 4, 
+	    showCursorWhenSelecting: true	    	    	        
+	    });	    
+    </script>
+ -->	
+</html> 
