@@ -10,4 +10,10 @@ de Mozilla Venezuela realizado en mi ciudad (Cumaná, Estado Sucre).
 # Noticia 
 [FirefoxOS-App-Day][]
 
+# Entrega final al jurado de MozillaVE
+
+![default preview](https://raw.githubusercontent.com/neocarvajal/Syntax/master/img/default-syntax.jpg)
+
+![syntax menú](https://raw.githubusercontent.com/neocarvajal/Syntax/master/img/menu-syntax.jpg) 
+
 
